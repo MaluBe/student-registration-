@@ -16,6 +16,7 @@
        
  
             }
+
             h1{
                 color: #159;
             }
@@ -24,13 +25,14 @@
             }
             .label{
                 position: fixed;
-                left: 500px;
+                left: 600px;
                border-radius: 20px;
+               color: cornflowerblue;
             }
      
             .div{
                 margin-top :30px; 
-                margin-left: 370px;
+                margin-left: 450px;
                 background-color: transparent;
                 width: 450px;
                 height: 570px;
@@ -92,23 +94,10 @@
         <h:outputLabel for="ad" value="Address" style="margin:15px"/>
         <h:inputText class="label" id="ad" value="#{register.address}"/> 
         <br></br> 
-        <br></br>
-        <h:outputLabel for="mon" value="MotherName" style="margin:15px"/>
-        <h:inputText class="label" id="mon" value="#{register.motherName}"/>
-        <br></br> 
-        <br></br>
-        <h:outputLabel for="nat" value="Nationality" style="margin:15px"/>
-        <h:inputText class="label" id="nat" value="#{register.college}"/>
-        <br></br> 
-        <br></br>
-        <h:outputLabel for="hot" value="HomeTown" style="margin:15px"/>
-        <h:inputText class="label" id="hot" value="#{register.hometown}"/>
-        <br></br> 
-        <br></br>
-        <h:outputLabel for="hon" value="HomeNo" style="margin:15px"/>
-        <h:inputText class="label" id="hon" value="#{register.homeNo}"/>     
-         <br></br>
-          <br></br>
+         <br/>
+        <h:outputLabel for="idd" value="ID" style="margin:15px"/>
+        <h:inputText class="label" id="id" value="#{register.id}" />
+        <br/>
         <h:outputLabel value="gender" style="margin:15px"/>
         <h:selectOneRadio value="#{register.gender}">
         <f:selectItem itemValue="female" itemLabel="female"/>

@@ -5,25 +5,41 @@
     <h:head>
         <title>LOGIN PAGE</title>
         <style>
+            .me{
+                
+               border-radius: 20px;
+               color: cornflowerblue;
+            }
             body{
             background-size: 100%;
              
                 background-repeat: no-repeat;
                 background-image: url(image/sc.jpg);
             }
+            .btn{
+                border-radius: 50px;
+               color: cornflowerblue;
+            }
+            .it{
+                 margin-top :30px; 
+                margin-left: 450px; 
+            }
         </style>
     </h:head>
     <h:body style="background-color: burlywood">
+        <div class="it">
         <h:form>
             <h1>  welcome! </h1>
             <br></br>
             <h:outputLabel value="Username"/>
-            <h:inputText id="username"  value="#{username}" style="margin:10px"/><br></br>
+            <h:inputText class="me" id="username"  value="#{login.username}" style="margin:10px"/><br></br>
             <br></br>
             <h:outputLabel value="Password"/>
-            <h:inputSecret id="password" value="#{password}" style="margin:10px"/><br></br>
+            <h:inputSecret  class="me" id="password" value="#{login.password}" style="margin:10px"/><br></br>
             <br></br>
-            <h:commandButton class="btn" value="Login" action="form" style="margin:25px;padding: 12px;background-color: honeydew"/> 
+            <h:commandButton class="btn" value="Login"  action="#{login. method1()}" style="margin:25px;padding: 12px;background-color: honeydew"/> 
+       
         </h:form>
+            </div>
     </h:body>
 </html>

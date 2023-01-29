@@ -17,10 +17,10 @@ public class Fromdb {
        
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
-            ResultSet rs = con.createStatement().executeQuery("select * from Student");
+            ResultSet rs = con.createStatement().executeQuery("select * from Students");
             while (rs.next()) {
                 Register std = new Register();
-                std.setId(rs.getString("ID"));
+                
                 std.setFullName(rs.getString("FULLNAME"));
                 std.setDateOfBirth(rs.getString("DATEOFBIRTH"));
                 std.setCollege(rs.getString("COLLEGE"));
@@ -28,7 +28,7 @@ public class Fromdb {
                 std.setDepartment(rs.getString("DEPARTMENT"));
                 std.setAddress(rs.getString("ADDRESS"));
                 std.setGender(rs.getString("GENDER"));
-                
+                std.setId(rs.getString("ID"));
                 //course[1]=rs.getString("COURSE");
                 //usr.setCourse(course);
                 list.add(std);

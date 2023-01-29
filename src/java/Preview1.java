@@ -8,12 +8,6 @@
  *
  * @author malu
  */
-class preview {
-
-    static class addEventListener {
-
-        public addEventListener() {
-        }
-    }
+public class Preview1 {
     
 }

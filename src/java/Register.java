@@ -22,42 +22,6 @@ import javax.faces.bean.RequestScoped;
 public class Register {
 private String fullName;
 private BufferedImage b;
-private String motherName;
-
-    public String getMotherName() {
-        return motherName;
-    }
-
-    public void setMotherName(String motherName) {
-        this.motherName = motherName;
-    }
-
-    public String getNationality() {
-        return nationality;
-    }
-
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public String getHomeNo() {
-        return homeNo;
-    }
-
-    public void setHomeNo(String homeNo) {
-        this.homeNo = homeNo;
-    }
-
-    public String getHometown() {
-        return hometown;
-    }
-
-    public void setHometown(String hometown) {
-        this.hometown = hometown;
-    }
-private String nationality;
-private String homeNo;
-private String hometown;
 
     public BufferedImage getB() {
         return b;
@@ -145,21 +109,17 @@ private String gender;
   Register reg = new Register();
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
-            String sql = "insert into STUDENTS(ID,FULLNAME,DATEOFBIRTH,COLLEGE,YEAR,DEPARTMENT,ADDRESS,GENDER,MOTHERNAME,NATIONALITY,HOMETOWN,HOMENO) values(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into STUDENTS(FULLNAME,DATEOFBIRTH,COLLEGE,YEAR,DEPARTMENT,ADDRESS,GENDER,ID) values(?,?,?,?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
            
-            ps.setString(1, id);
-            ps.setString(2, fullName);  
-            ps.setString(3, dateOfBirth);
-            ps.setString(4, college);
-            ps.setString(5, year);
-            ps.setString(6, department);
-            ps.setString(7, address);
-            ps.setString(8,gender);
-            ps.setString(9, motherName);
-            ps.setString(10, nationality);
-            ps.setString(11, hometown);
-            ps.setString(12, homeNo);
+            ps.setString(8, id);
+            ps.setString(1, fullName);  
+            ps.setString(2, dateOfBirth);
+            ps.setString(3, college);
+            ps.setString(4, year);
+            ps.setString(5, department);
+            ps.setString(6, address);
+            ps.setString(7,gender);
              // ps.setBlob(8, (Blob) b);
             ps.executeUpdate();
             } catch (Exception e){

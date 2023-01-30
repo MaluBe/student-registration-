@@ -126,4 +126,32 @@ private String gender;
              System.out.println("there is aproblem");     
 }
 }
+     
+     
+      public void belete() {
+         try{
+  Register reg = new Register();
+            DBConnection dbcon = new DBConnection();
+            Connection con = dbcon.connMethod();
+            String sql = "update STUDENTS set FULLNAME=?,DATEOFBIRTH=?,COLLEGE=?,YEAR=?,DEPARTMENT=?,ADDRESS=?,GENDER=? where ID=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+           
+          
+            ps.setString(1, fullName);  
+            ps.setString(2, dateOfBirth);
+            ps.setString(3, college);
+            ps.setString(4, year);
+            ps.setString(5, department);
+            ps.setString(6, address);
+            ps.setString(7,gender);
+            ps.setString(8, id);
+             // ps.setBlob(8, (Blob) b);
+            ps.executeUpdate();
+            } catch (Exception e){
+             System.out.println("there is aproblem");     
 }
+}
+     
+     
+}
+
